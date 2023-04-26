@@ -10,11 +10,11 @@ public final class TipoRelacionInstitucionEntity {
 	private UUID identificador;
 	private String nombre;
 	private String descripcion;
-	private EstadoTipoRelacionInstitucionDTO estadoTipoRelacionInstitucion;
+	private EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion;
 	
 	
 	public TipoRelacionInstitucionEntity(UUID identificador, String nombre, String descripcion,
-			EstadoTipoRelacionInstitucionDTO estadoTipoRelacionInstitucion) {
+			EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
 		super();
 		this.identificador = identificador;
 		this.nombre = nombre;
@@ -23,21 +23,13 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public TipoRelacionInstitucionEntity() {
-		super();
-	}
-
 	
-	public TipoRelacionInstitucionDTO create() {
-		return new TipoRelacionInstitucionDTO();
-	}
-
 	public final UUID getIdentificador() {
 		return identificador;
 	}
 
 
-	public final TipoRelacionInstitucionDTO setIdentificador(UUID identificador) {
+	public final TipoRelacionInstitucionEntity setIdentificador(UUID identificador) {
 		this.identificador = UtilUUID.getDefault(identificador);
 		return this;
 	}
@@ -48,7 +40,7 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final TipoRelacionInstitucionDTO  setNombre(String nombre) {
+	public final TipoRelacionInstitucionEntity  setNombre(String nombre) {
 		this.nombre = UtilText.getUtilText().applyTrim(nombre);
 		return this;
 	}
@@ -59,19 +51,19 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final TipoRelacionInstitucionDTO  setDescripcion(String descripcion) {
+	private final void  setDescripcion(String descripcion) {
 		this.descripcion = UtilText.getUtilText().applyTrim(descripcion);
-		return this;
+		
 	}
 
 
-	public final EstadoTipoRelacionInstitucionDTO getEstadoTipoRelacionInstitucion() {
+	public final EstadoTipoRelacionInstitucionEntity getEstadoTipoRelacionInstitucion() {
 		return estadoTipoRelacionInstitucion;
 	}
 
 
-	public final TipoRelacionInstitucionDTO  setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionDTO estadoTipoRelacionInstitucion) {
-		this.estadoTipoRelacionInstitucion = UtilObject.getDefault(final estadoTipoRelacionInstitucion, EstadoTipoRelacionInstitucionDTO.create());
+	public final TipoRelacionInstitucionEntity  setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
+		this.estadoTipoRelacionInstitucion = UtilObject.getDefault(final estadoTipoRelacionInstitucion, new EstadoTipoRelacionInstitucionEntity());
 		return this;
 	}
 	
