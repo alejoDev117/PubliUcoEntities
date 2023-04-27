@@ -16,10 +16,12 @@ public final class TipoRelacionInstitucionEntity {
 	public TipoRelacionInstitucionEntity(UUID identificador, String nombre, String descripcion,
 			EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
 		super();
-		this.identificador = identificador;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.estadoTipoRelacionInstitucion = estadoTipoRelacionInstitucion;
+		setIdentificador(identificador);
+		setNombre(nombre);
+		setDescripcion(descripcion);
+		setEstadoTipoRelacionInstitucion(estadoTipoRelacionInstitucion);
+		
+	
 	}
 
 
@@ -29,9 +31,9 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final TipoRelacionInstitucionEntity setIdentificador(UUID identificador) {
+	public final void setIdentificador(UUID identificador) {
 		this.identificador = UtilUUID.getDefault(identificador);
-		return this;
+	
 	}
 
 
@@ -40,9 +42,9 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final TipoRelacionInstitucionEntity  setNombre(String nombre) {
+	public final void  setNombre(String nombre) {
 		this.nombre = UtilText.getUtilText().applyTrim(nombre);
-		return this;
+		
 	}
 
 
@@ -62,9 +64,8 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final TipoRelacionInstitucionEntity  setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
-		this.estadoTipoRelacionInstitucion = UtilObject.getDefault(final estadoTipoRelacionInstitucion, new EstadoTipoRelacionInstitucionEntity());
-		return this;
+	public final void setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
+		this.estadoTipoRelacionInstitucion = UtilObject.getDefault(estadoTipoRelacionInstitucion, EstadoTipoRelacionInstitucionEntity.getDefaultObject());
 	}
 	
 	

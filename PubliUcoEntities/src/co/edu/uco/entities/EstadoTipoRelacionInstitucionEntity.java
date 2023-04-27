@@ -1,4 +1,4 @@
-package co.edu.uco.entities;
+ package co.edu.uco.entities;
 
 import java.util.UUID;
 
@@ -6,6 +6,8 @@ import co.edu.uco.crosscutting.utils.UtilText;
 import co.edu.uco.crosscutting.utils.UtilUUID;
 
 public class EstadoTipoRelacionInstitucionEntity {
+	
+	private static final EstadoTipoRelacionInstitucionEntity DEFAULT_OBJECT = new EstadoTipoRelacionInstitucionEntity();
 	private UUID identificador;
 	private String nombre;
 	private String descripcion;
@@ -19,6 +21,18 @@ public class EstadoTipoRelacionInstitucionEntity {
 		setDescripcion(descripcion);	
 		}
 	
+	private  EstadoTipoRelacionInstitucionEntity() {
+		super();
+		setIdentificador(UtilUUID.getDefaultUuid());
+		setNombre(UtilText.getUtilText().getDefaultValue());
+		setDescripcion(UtilText.getUtilText().getDefaultValue());
+	}
+	
+	
+	public static EstadoTipoRelacionInstitucionEntity getDefaultObject() {
+		return DEFAULT_OBJECT;
+	}
+
 	
 	
 	public final UUID getIdentificador() {
