@@ -5,8 +5,10 @@ import java.util.UUID;
 import co.edu.uco.crosscutting.utils.UtilObject;
 import co.edu.uco.crosscutting.utils.UtilText;
 import co.edu.uco.crosscutting.utils.UtilUUID;
+import co.edu.uco.dto.EstadoTipoRelacionInstitucionDTO;
 
 public final class TipoRelacionInstitucionEntity {
+	private static final TipoRelacionInstitucionEntity DEFAULT_OBJECT = new TipoRelacionInstitucionEntity();
 	private UUID identificador;
 	private String nombre;
 	private String descripcion;
@@ -23,15 +25,33 @@ public final class TipoRelacionInstitucionEntity {
 		
 	
 	}
+	
+
+	public TipoRelacionInstitucionEntity() {
+		super();
+		setIdentificador(UtilUUID.getDefaultUuid());
+		setNombre(UtilText.getUtilText().getDefaultValue());
+		setDescripcion(UtilText.getUtilText().getDefaultValue());
+		setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionEntity.getDefaultObject());
+	}
 
 
 	
+
+	
+	public static final TipoRelacionInstitucionEntity getDefaultObject() {
+		return DEFAULT_OBJECT;
+	}
+
+
+
+
 	public final UUID getIdentificador() {
 		return identificador;
 	}
 
 
-	public final void setIdentificador(UUID identificador) {
+	private final void setIdentificador(UUID identificador) {
 		this.identificador = UtilUUID.getDefault(identificador);
 	
 	}
@@ -42,7 +62,7 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final void  setNombre(String nombre) {
+	private final void  setNombre(String nombre) {
 		this.nombre = UtilText.getUtilText().applyTrim(nombre);
 		
 	}
@@ -64,7 +84,7 @@ public final class TipoRelacionInstitucionEntity {
 	}
 
 
-	public final void setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
+	private final void setEstadoTipoRelacionInstitucion(EstadoTipoRelacionInstitucionEntity estadoTipoRelacionInstitucion) {
 		this.estadoTipoRelacionInstitucion = UtilObject.getDefault(estadoTipoRelacionInstitucion, EstadoTipoRelacionInstitucionEntity.getDefaultObject());
 	}
 	
