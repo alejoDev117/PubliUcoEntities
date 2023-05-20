@@ -2,10 +2,10 @@ package co.edu.uco.entities;
 
 import java.util.UUID;
 
+
 import co.edu.uco.crosscutting.utils.UtilObject;
 import co.edu.uco.crosscutting.utils.UtilText;
 import co.edu.uco.crosscutting.utils.UtilUUID;
-import co.edu.uco.dto.EstadoTipoIdentificacionDTO;
 
 public class TipoIdentificacionEntity {
 	
