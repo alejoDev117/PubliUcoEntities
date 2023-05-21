@@ -1,13 +1,14 @@
 package co.edu.uco.entities;
 
 import java.util.Date;
+
 import java.util.UUID;
 
 import co.edu.uco.crosscutting.utils.UtilDateTime;
 import co.edu.uco.crosscutting.utils.UtilNumeric;
 import co.edu.uco.crosscutting.utils.UtilObject;
 import co.edu.uco.crosscutting.utils.UtilUUID;
-import co.edu.uco.dto.PublicacionDTO;
+
 
 public final class PlanPublicacionEntity {
 

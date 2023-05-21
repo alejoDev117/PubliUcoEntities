@@ -108,7 +108,7 @@ public final class ComentarioLectorEntity {
 
 
 	private final void setComentarioPadre(ComentarioLectorEntity comentarioPadre) {
-		this.comentarioPadre = UtilObject.getDefault(comentarioPadre, ComentarioLectorEntity.create());
+		this.comentarioPadre = UtilObject.getDefault(comentarioPadre, ComentarioLectorEntity.getDefualtObject());
 	
 	}
 
